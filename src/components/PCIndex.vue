@@ -9,21 +9,8 @@
   <main>
     <div class="common-layout">
     <el-container>
+      <!-- 菜单 -->
       <el-header>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <el-menu
           :default-active="activeIndex"
           class="el-menu-demo"
@@ -34,25 +21,17 @@
             >
             <el-menu-item index="0">
                 <img
-                    style="width: 75px;height: 57px;"
+                    style="width: 75px;height:57px;"
                     src="/src/images/favicon.svg"
                     alt="蔓舞舞蹈工作室"
                 />
             </el-menu-item>
             <div class="flex-grow" />
-            <el-menu-item index="1">Processing Center</el-menu-item>
-            <el-sub-menu index="2">
-                <template #title>Workspace</template>
-                <el-menu-item index="2-1">item one</el-menu-item>
-                <el-menu-item index="2-2">item two</el-menu-item>
-                <el-menu-item index="2-3">item three</el-menu-item>
-                <el-sub-menu index="2-4">
-                    <template #title>item four</template>
-                    <el-menu-item index="2-4-1">item one</el-menu-item>
-                    <el-menu-item index="2-4-2">item two</el-menu-item>
-                    <el-menu-item index="2-4-3">item three</el-menu-item>
-                </el-sub-menu>
-            </el-sub-menu>
+            <el-menu-item index="1">首页</el-menu-item>
+            <el-menu-item  index="2">培训地点</el-menu-item>
+            <el-menu-item index="3">收费标准</el-menu-item>
+            <el-menu-item index="4">视频</el-menu-item>
+            <el-menu-item index="5">联系我们</el-menu-item>
         </el-menu>
 
 
