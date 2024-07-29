@@ -1,5 +1,5 @@
 <script setup>
-
+import PCIndex from './components/PCIndex.vue'
 </script>
 
 <template>
@@ -7,7 +7,7 @@
   </header>
 
   <main>
-    666666666666666666666666666666666666666666666
+    <PCIndex></PCIndex>
   </main>
 </template>
 
