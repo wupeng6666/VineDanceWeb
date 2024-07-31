@@ -35,21 +35,21 @@
         text-color="#ff6299"
         active-text-color="#ff6299"
         @select="handleSelectTab"
-        class="flex-grow"
+        style="float:right;width:100%"
+        :ellipsis="false"
       >
-        <el-menu-item index="PCHome" style="left: 0px;">
+      <el-menu-item index="PCHome">
           <img
             style="width: 75px;height:57px;"
             src="/src/images/favicon.svg"
             alt="蔓舞舞蹈工作室"
           />
-        </el-menu-item>
-
+        </el-menu-item> 
+        <div style="display: flex;flex:1;"></div>
         <el-menu-item index="PCHome">首页</el-menu-item>
         <el-menu-item index="PCFees">收费标准</el-menu-item>
         <el-menu-item index="PCVideo">视频</el-menu-item>
         <el-menu-item index="PCContactUs">联系我们</el-menu-item>
-
       </el-menu>
     </el-header>
     <el-main>
@@ -59,12 +59,4 @@
 </template>
 
 <style scoped>
-.flex-grow {
-  width: 100%;
- 
-  display: flex;
-  justify-content: flex-end;
-}
 </style>
-
-```
