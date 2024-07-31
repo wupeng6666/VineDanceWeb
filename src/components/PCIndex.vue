@@ -1,26 +1,28 @@
+如何做到第一个和后面的分开布局，一左一右
+```vue
 <script setup>
-import { useRouter } from 'vue-router';
-const router = useRouter();
+  import { ref, watch, onMounted } from 'vue';
+  import { useRouter } from 'vue-router';
 
-// 处理菜单项选择事件
-const handleSelectTab = (index) => {
-  switch (index) {
-    case 'PCHome':
-      router.push({ name: 'PCHome' });
-      break;
-    case 'PCFees':
-      router.push({ name: 'PCFees' });
-      break;
-    case 'PCVideo':
-      router.push({ name: 'PCVideo' });
-      break;
-    case 'PCContactUs':
-      router.push({ name: 'PCContactUs' });
-      break;
-    default:
-      router.push({ name: 'PCHome' });
-  }
-};
+  const router = useRouter();
+  const activeIndex = ref('PCHome');
+
+  // 处理菜单项选择事件
+  const handleSelectTab = (index) => {
+    activeIndex.value = index; // 更新 activeIndex 的值
+  };
+
+  watch(activeIndex, (newVal, oldVal) => {
+    if (newVal !== oldVal) {
+      // 切换路由
+      router.push({ name: newVal });
+    }
+  });
+
+  // 组件挂载时导航到 PCHome 路由
+  onMounted(() => {
+    router.push({ name: 'PCHome' });
+  });
 </script>
 
 <template>
@@ -33,30 +35,36 @@ const handleSelectTab = (index) => {
         text-color="#ff6299"
         active-text-color="#ff6299"
         @select="handleSelectTab"
+        class="flex-grow"
       >
-        <el-menu-item index="icon">
+        <el-menu-item index="PCHome" style="left: 0px;">
           <img
             style="width: 75px;height:57px;"
             src="/src/images/favicon.svg"
             alt="蔓舞舞蹈工作室"
           />
         </el-menu-item>
-        <div class="flex-grow" />
+
         <el-menu-item index="PCHome">首页</el-menu-item>
         <el-menu-item index="PCFees">收费标准</el-menu-item>
         <el-menu-item index="PCVideo">视频</el-menu-item>
         <el-menu-item index="PCContactUs">联系我们</el-menu-item>
+
       </el-menu>
     </el-header>
     <el-main>
-      <router-view></router-view>
-      <RouterLink to="/PCHome">Go to About</RouterLink>
+      <RouterView />
     </el-main>
   </el-container>
 </template>
 
 <style scoped>
 .flex-grow {
-  flex-grow: 1;
+  width: 100%;
+ 
+  display: flex;
+  justify-content: flex-end;
 }
 </style>
+
+```
