@@ -38,7 +38,7 @@
         style="float:right;width:100%"
         :ellipsis="false"
       >
-      <el-menu-item index="PCHome">
+        <el-menu-item index="PCHome">
           <img
             style="width: 75px;height:57px;"
             src="/src/images/favicon.svg"
@@ -49,7 +49,8 @@
         <el-menu-item index="PCHome">首页</el-menu-item>
         <el-menu-item index="PCFees">收费标准</el-menu-item>
         <el-menu-item index="PCVideo">视频</el-menu-item>
-        <el-menu-item index="PCContactUs">联系我们</el-menu-item>
+        <el-menu-item index="PCLogin">联系我们</el-menu-item>
+        <el-menu-item ><el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"/></el-menu-item>
       </el-menu>
     </el-header>
     <el-main>
